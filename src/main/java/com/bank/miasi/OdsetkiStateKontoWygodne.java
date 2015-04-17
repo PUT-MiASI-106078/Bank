@@ -5,7 +5,9 @@
 package com.bank.miasi;
 
 import com.bank.miasi.konta.typy.TypKonta;
+
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  *
@@ -21,7 +23,7 @@ public class OdsetkiStateKontoWygodne implements OdsetkiState{
         wynik = stanKonta;
         wynik.multiply(procent);
         wynik.multiply(new BigDecimal(typKonta.getOkresRozliczeniowy()));
-        wynik.divide(new BigDecimal(365));
+        wynik.divide(new BigDecimal(365),2, RoundingMode.HALF_EVEN);;
 
         return wynik;
     }
