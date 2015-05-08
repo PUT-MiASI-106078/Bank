@@ -65,7 +65,7 @@ public abstract class Konto{
     public int getBankId(){
         return Integer.parseInt(numer.substring(0,1));
     }
-    public void printRaport(Visitor visitor)
+    public void printRaport(KontoWizytator visitor)
     {
         for(OperacjaBankowa operacja : historia)
         {
@@ -73,7 +73,7 @@ public abstract class Konto{
         }
     }
     
-    public void printRaportThisMonth(Visitor visitor)
+    public void printRaportThisMonth(KontoWizytator visitor)
     {
         for(OperacjaBankowa operacja : historia)
         {
@@ -87,7 +87,7 @@ public abstract class Konto{
         	}
         }
     }
-    public void printRaportThisYear(Visitor visitor)
+    public void printRaportThisYear(KontoWizytator visitor)
     {
         for(OperacjaBankowa operacja : historia)
         {
@@ -100,6 +100,10 @@ public abstract class Konto{
             visitor.visit(operacja);
         	}
         }
+    }
+    public void wplacKwote(BigDecimal kwota)
+    {
+        this.stan = this.stan.add(kwota);
     }
 }
 

@@ -9,5 +9,5 @@ package com.bank.miasi.konta;
  * @author student
  */
 public interface Visitable {
-    public void accept(Visitor visitor);
+    public void accept(KontoWizytator visitor);
 }

@@ -69,7 +69,10 @@ public class OperacjaBankowa {
         this.doKogo = doKogo;
         this.data = data;
     }
-
+    public void wykonajOperacjeFiltr() throws NiewspieranaOperacja
+    {
+        doKogo.wplata(this);
+    }
     private OperacjaBankowa reverse() {
         return new OperacjaBankowa(typOperacji.getReverse(), kwota, tytul, odKogo, doKogo, data);
     }
