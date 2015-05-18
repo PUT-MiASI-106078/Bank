@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 public class Odsetki {
 
-   private OdsetkiState odstate;
+   private static OdsetkiState odstate;
    public Odsetki(OdsetkiState st)
    {
        setState(st);
@@ -14,7 +14,7 @@ public class Odsetki {
         odstate = newState;
     }
    
-    public BigDecimal obliczOdsetki(BigDecimal stanKonta,TypKonta typKonta) {
+    public static BigDecimal obliczOdsetki(BigDecimal stanKonta,TypKonta typKonta) {
         return odstate.obliczOdsetki( stanKonta, typKonta);
     }
     
